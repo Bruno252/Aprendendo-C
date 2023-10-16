@@ -6,6 +6,11 @@ int main()
 {
 
     float nota;
+    
+    /*Atividade =Escreva um algoritmo que leia a nota de um aluno.
+Caso seja menor que 0 ou maior que 10, mostre a pergunta novamente.
+
+Mostre a nota informada pelo usuário.*/
 
     printf("Nota do Aluno:");
     scanf("%f", &nota);
