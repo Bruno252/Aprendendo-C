@@ -5,6 +5,8 @@
 int main(){
 
 int i;
+  /* Atividade = Escrever um algoritmo que gera e escreve os
+números pares entre 100 e 200.*/
 
 for(i=100; i <= 200; i++){
   if(i%2==0){
