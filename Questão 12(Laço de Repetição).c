@@ -1,65 +1,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
-int main() {
+int main()
+{
 
-    int idade=0,resposta=0,qntPessoa=0,qntMulher=0;
-    int maiorIdade=-100,menorIdade=+100,somaSalario=0;
-    float media=0,salario=0;
+    int idade = 0, resposta = 0, qntPessoa = 0, qntMulher = 0;
+    int maiorIdade = -100, menorIdade = +100, somaSalario = 0;
+    float media = 0, salario = 0;
     char sexo;
 
-    do {
+    printf(" 1 | para adicionar uma pessoa \n");
+    printf("2  | para sair e exibir o(s) resultado(s) \n");
+    scanf("%d", &resposta);
+
+    system("cls || clear");
+
+    while (resposta == 1)
+    {
         fflush(stdin);
         qntPessoa++;
 
+        printf("Digite F para Feminino \n");
+        printf("Digite M para Masculino \n");
         printf("Sexo:");
-        scanf("%c",&sexo);
+        scanf("%c", &sexo);
 
         printf("Idade:");
-        scanf("%d",&idade);
+        scanf("%d", &idade);
 
         printf("Salario:");
-        scanf("%f",&salario);
-
+        scanf("%f", &salario);
         system("cls || clear");
 
-        if(idade>maiorIdade) {
-            maiorIdade=idade;
-
+        if (idade > maiorIdade)
+        {
+            maiorIdade = idade;
         }
 
-        if(idade<menorIdade) {
-            menorIdade=idade;
-
+        if (idade < menorIdade)
+        {
+            menorIdade = idade;
         }
 
-        switch(sexo) {
+        fflush(stdin);
 
-        case 'F':
-
-            if(salario>5.000) {
+        if (sexo == 'F')
+        {
+            if (salario > 5.000)
+            {
                 qntMulher++;
             }
-            break;
         }
 
-        somaSalario+=salario;
-        media=somaSalario/qntPessoa;
+        somaSalario += salario;
+        media = somaSalario / qntPessoa;
 
-        printf("Digite 1 para adicionar mais uma pessoa\n");
-        printf("Digite 2 para sair e exibir o resultados\n");
-        scanf("%d",&resposta);
+        printf(" 1 | para adicionar uma pessoa \n");
+        printf("2  | para sair e exibir o(s) resultado(s) \n");
+        scanf("%d", &resposta);
         system("cls || clear");
 
         fflush(stdin);
-    } while(resposta==1);
+    }
 
-
-    printf("Media dos Salarios:%.2f \n",media);
-    printf("Maior Idade:%d \n",maiorIdade);
-    printf("Menor Idade:%d \n",menorIdade);
-    printf("Quantidades de Mulheres com salario acima de 5.000:%d \n",qntMulher);
+    printf("Media dos Salarios:%.3f \n", media);
+    printf("Maior Idade:%d \n", maiorIdade);
+    printf("Menor Idade:%d \n", menorIdade);
+    printf("Quantidades de Mulheres com salario acima de 5.000:%d \n", qntMulher);
+    printf("Sexo:%c \n", sexo);
 
     return 0;
 }
